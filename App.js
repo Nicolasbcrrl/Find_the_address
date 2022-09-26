@@ -19,7 +19,8 @@ export default function App() {
     }
     fetch("https://www.mapquestapi.com/geocoding/v1/address?key=pWBMs7bqfHmTAojNXOLdm3RQg9wvi6P1&location=" + research)
       .then(response => response.json())
-      .then(data => setRegion({...region, latitude: data.results[0].locations[0].latLng.lat, longitude: data.results[0].locations[0].latLng.lng}))
+      .then(data => setRegion({...region, latitude: data.results[0].locations[0].latLng.lat, longitude: data.results[0].locations[0].latLng.lng,
+            latitudeDelta: 0.0322,LongitudeDelta: 0.0221}))
       .catch(err => Alert.alert('Error', err.message))
   }
 console.log(region);
